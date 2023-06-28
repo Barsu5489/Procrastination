@@ -16,9 +16,13 @@
         <div>
         <label for="title"> Todo Title</label> 
         <input type="text" name="title" placeholder="Enter todo">
+        <br>
         <button type="submit">  Add </button>
         </div>
          </form>
+         {% for todo in todo_list %}
+            <p> {{todo.id}} | {{todo.title}} </p>
+         {% endfor %}
 
     </body>
 </html>
