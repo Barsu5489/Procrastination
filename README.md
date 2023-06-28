@@ -42,6 +42,3 @@ To exit the virtual environment, simply run the deactivate command:
 ```
 deactivate
 ```
-Copy
-
-## 
