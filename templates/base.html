@@ -8,11 +8,15 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <title>Todo </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
     </head>
+
     <body>
      
     <h1>todo app</h1>
-    <form action="">
+    <form action="/add" method="post">
         <div>
         <label for="title"> Todo Title</label> 
         <input type="text" name="title" placeholder="Enter todo">
@@ -22,6 +26,14 @@
          </form>
          {% for todo in todo_list %}
             <p> {{todo.id}} | {{todo.title}} </p>
+            {% if todo.complete == False %}
+            <span> Not completed </span>
+            {% else %}
+            <span> Completed </span>
+            {% endif %}
+            <a href="/update/{{todo.id}}"> Update</a>
+            <a href="/delete/{{todo.id}}"> Delete</a>
+
          {% endfor %}
 
     </body>
